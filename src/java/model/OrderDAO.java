@@ -15,23 +15,23 @@ public class OrderDAO implements OrderDAOStrategy{
     private static final String URL = "jdbc:mysql://localhost:3306/mydb";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "tiburon87";
+    private static final String TABLE_NAME = "menu_items";
     
     public OrderDAO(){
         databaseAccessor = new DB_MySql();
     }
 
     @Override
-    public List<MenuItem> getMenuItems() {
+    public List<MenuItem> getMenuItems() throws RuntimeException {
         
         List<MenuItem> menuItems = new <MenuItem>ArrayList();
         
         try{
             databaseAccessor.openConnection(DRIVER, URL, USERNAME, PASSWORD);
-            String tableName = "menu_items";
-            List<Map> menu_list = databaseAccessor.findAllRecords(tableName, true);
-            
-            for(int i = 1; i < menu_list.size(); i++){
+            List<Map> menu_list = databaseAccessor.findAllRecords(TABLE_NAME, true);
+            for(int i = 0; i < menu_list.size(); i++){
             MenuItem item = new MenuItem();
+            item.setItemID((Integer)(menu_list.get(i).get("item_id")));
             item.setName((String)(menu_list.get(i).get("name")));
             item.setDescription((String)(menu_list.get(i).get("description")));
             item.setPrice((Double)(menu_list.get(i).get("price")));

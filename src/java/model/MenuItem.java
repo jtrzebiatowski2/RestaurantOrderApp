@@ -5,18 +5,28 @@ package model;
  * @author J-Tron
  */
 public class MenuItem {
+    private int itemID;
     private String name;
     private String description;
     private double price;
     
-    MenuItem(String name, String description, double price){
+    public MenuItem(int itemID, String name, String description, double price){
+        this.itemID= itemID;
         this.name = name;
         this.description = description;
         this.price = price;
     }
     
-    MenuItem(){
+    public MenuItem(){
         
+    }
+
+    public int getItemID() {
+        return itemID;
+    }
+
+    public void setItemID(int itemID) {
+        this.itemID = itemID;
     }
 
     public String getName() {
@@ -25,11 +35,6 @@ public class MenuItem {
 
     public double getPrice() {
         return price;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setName(String name) {
@@ -53,6 +58,27 @@ public class MenuItem {
         this.description = description;
     }
     
+       @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.itemID;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MenuItem other = (MenuItem) obj;
+        if (this.itemID != other.itemID) {
+            return false;
+        }
+        return true;
+    }
     
     
 }
