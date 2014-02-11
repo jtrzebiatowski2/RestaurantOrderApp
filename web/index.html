@@ -1,16 +1,85 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Justin's Steakhouse</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <style>
+            body{
+                margin-left:auto;
+                margin-right:auto;
+                margin-top: auto;
+                margin-bottom:auto;
+                background-image: url('wood-background.jpg');
+            }
+            .center{
+                margin-left:auto;
+                margin-right:auto;
+                text-align: center;
+            }
+            .inline{
+                margin-left:auto;
+                margin-right:auto;
+                display: inline-block;
+                text-align: center;
+                background-color: #ffff66;
+                
+            }
+            .infoDivs{
+                margin-top:auto;
+                margin-bottom: auto;
+                margin-left:auto;
+                margin-right:auto;
+                width:225px;
+                height:500px;
+                border-style: groove;
+                border-color: saddlebrown;
+                border-width:10px;
+            }
+            .rockwell {
+                font-family: Rockwell, Georgia, Serif;
+            }
+            
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class='center'><img src='JustinsChopHouseBanner.png' alt='titleBanner'></div>
+        <br><br>
+        <div class ="center">
+            <div class='inline infoDivs' style="float:left;">
+                <h3 class="rockwell">Hours of Operation</h3>
+                <p class="center rockwell">
+                    Monday- 4pm to 11pm <br>
+                    Tuesday- 4pm to 11pm <br>
+                    Wednesday- 4pm to 11pm <br>
+                    Thursday- 4pm to 11pm <br>
+                    Friday- 4pm to 2am <br>
+                    Saturday- 4pm to 2am <br>
+                    Sunday- Closed <br>
+                </p>
+                <h3 class="rockwell">Location</h3>
+                <p class="center rockwell">
+                    2004 Oakdale Dr.<br>
+                    Waukesha, WI 53189<br><br>
+                    <iframe width="200" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2004+Oakdale+Dr,+Waukesha,+WI&amp;aq=0&amp;oq=2004+oakdale+&amp;sll=43.084369,-88.256499&amp;sspn=0.05717,0.122223&amp;ie=UTF8&amp;hq=&amp;hnear=2004+Oakdale+Dr,+Waukesha,+Wisconsin+53189&amp;ll=42.979597,-88.257325&amp;spn=0.007158,0.015278&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=2004+Oakdale+Dr,+Waukesha,+WI&amp;aq=0&amp;oq=2004+oakdale+&amp;sll=43.084369,-88.256499&amp;sspn=0.05717,0.122223&amp;ie=UTF8&amp;hq=&amp;hnear=2004+Oakdale+Dr,+Waukesha,+Wisconsin+53189&amp;ll=42.979597,-88.257325&amp;spn=0.007158,0.015278&amp;t=m&amp;z=14" target="_blank" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                </p>
+            </div>
+            
+            <div class ='inline' style="border-style: ridge; border-color: #ffff66; border-width: 5px;">
+            <img src ='steakhouse.jpg' alt='steakhouse'>
+            </div>
+            
+            <div class ="inline infoDivs" style="float:right;">
+                <h3 class="rockwell">Place an Online Order</h3>
+                <p class="rockwell">
+                    Click to bring up an order form<br><br>
+                    Carry-outs are cooked to the<br>
+                    specs and quality required in<br>
+                    dine in experiences.
+                </p>
+                <form action="orderPage.jsp">
+                    <input type="submit" value="Order Form">
+                </form>
+            </div>
+        </div>
     </body>
 </html>

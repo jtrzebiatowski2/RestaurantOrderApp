@@ -15,7 +15,7 @@ public interface DBAccessor {
     
     public abstract void closeConnection() throws SQLException;
     
-    public abstract List findAllRecords(String sqlString, boolean closeConnection) throws SQLException,
+    public abstract List findAllRecords(String tableName, boolean closeConnection) throws SQLException,
 			Exception;
     
 }
