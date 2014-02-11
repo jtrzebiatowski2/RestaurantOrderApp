@@ -16,6 +16,7 @@ import java.util.Map;
  * @author J-Tron
  */
 public class DB_MySql implements DBAccessor{
+    
     private Connection connection;
     
     public DB_MySql(){
@@ -38,13 +39,14 @@ public class DB_MySql implements DBAccessor{
     }
 
     @Override
-    public List findRecords(String sqlQuery, boolean closeConnection) throws SQLException, Exception {
+    public List findAllRecords(String tableName, boolean closeConnection) throws SQLException, Exception {
         
                 Statement sqlStatement = null;
 		ResultSet sqlResults = null;
 		ResultSetMetaData metaData = null;
 		final List listOfRecords = new ArrayList();
 		Map record = null;
+                String sqlQuery = "Select * From " + tableName + ";";
                 
                 try{
                     sqlStatement = connection.createStatement();
@@ -54,7 +56,7 @@ public class DB_MySql implements DBAccessor{
                     
                     while(sqlResults.next()){
                         record = new HashMap();
-                        for(int i = 0; i <= numFields; i++){
+                        for(int i = 1; i <= numFields; i++){
                             try{
                                 record.put(metaData.getColumnName(i), sqlResults.getObject(i));
                             }catch(NullPointerException nullValue){ 
@@ -82,7 +84,6 @@ public class DB_MySql implements DBAccessor{
                 
                 return listOfRecords;
     }
-    
     
     
 }

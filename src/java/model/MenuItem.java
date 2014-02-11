@@ -42,7 +42,7 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Item:" + name + "\nDescription:" + description + "\nPrice:" + price + "\n ============================================================================";
     }
 
     public String getDescription() {
